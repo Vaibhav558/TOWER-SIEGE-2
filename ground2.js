@@ -10,7 +10,8 @@ class Ground2 {
     }
     display(){
     push();
-    var pos = this.body.position;  
+    var pos = this.body.position;
+    
     rectMode(CENTER);
     noStroke();
     fill("BROWN");

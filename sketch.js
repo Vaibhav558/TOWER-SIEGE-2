@@ -10,14 +10,12 @@ function setup(){
     var canvas = createCanvas(1536,700);
     engine = Engine.create();
     world = engine.world;
-
-    
+ 
     box = new Box(150,400,75,75);
     ground = new Ground2(1536/2,698,1536,40);
     base1 = new Ground2(650,600,300,20);
     base2 = new Ground2(1150,350,170,20);
-   
-
+  
     block1 = new Block(550,558,40,60);
     block2 = new Block(590,558,40,60);
     block3 = new Block(630,558,40,60);
@@ -29,7 +27,6 @@ function setup(){
     block12 = new Block2(630,498,40,60); 
     block13 = new Block2(670,498,40,60); 
     block14 = new Block2(710,498,40,60); 
-
     block22 = new Block3(630,438,40,60);
     block23 = new Block3(670,438,40,60);
 
@@ -41,9 +38,8 @@ function setup(){
 
     blockl11 = new Block3(1130,248,40,60);
     blockl12 = new Block3(1170,248,40,60);
-
     blockl21 = new Block2(1150,188,40,60);
-    
+ 
     slingshot = new SlingShot(box.body,{x:150,y:350});
 }  
 
@@ -54,59 +50,47 @@ function draw(){
     ground.display();
     base1.display();
     base2.display();
-
     block1.display();
     block2.display();
     block3.display();
     block4.display();
     block5.display();
     block6.display();
-
     block11.display();
     block13.display();
-    block14.display();
-    
+    block14.display(); 
     block12.display();
-
     block22.display();
     block23.display();
-
-    block24.display();
-    
+    block24.display();  
    blockl2.display();
    blockl1.display();
-   blockl3.display();
-   
+   blockl3.display(); 
    blockl11.display();
    blockl12.display();
-
    blockl21.display();
 
    slingshot.display();
 
    textSize(18);
-   textFont("Georgia");
-   textStyle(BOLD);
-   text("Press space to get one more chance to play!!",10,20);
    
-
+   textStyle(BOLD);
+   text("Press space to get one more chance to play!!",10,20); 
 }
 
 function mouseDragged(){
     Matter.Body.setPosition(box.body, {x: mouseX , y: mouseY});
 }
-
-
 function mouseReleased(){
     slingshot.fly();
 }
-
 function keyPressed(){
 	if(keyCode === 32)
 	{
 		Matter.Body.setPosition(box.body,{x:235, y:420})
 		slingshot.attach(box.body);
   }
+  
   if(keycode === space){
     box.x=200;
     box.y=200;

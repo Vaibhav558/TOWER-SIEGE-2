@@ -18,11 +18,12 @@ class SlingShot{
             var pointB = this.pointB;
             line(bodyA.x, bodyA.y, pointB.x, pointB.y);
         }
-    } 
+    }   
     attach(body){
         this.sling.bodyA=body;
     }
     fly(){
         this.sling.bodyA = null;
     }
+
 }
